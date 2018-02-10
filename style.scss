@@ -4,3 +4,14 @@
   margin: auto;
   width: 100%;
 }
+
+.data-row,
+option:hover {
+  cursor: pointer;
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 20vw;
+  overflow-x: hidden;
+}

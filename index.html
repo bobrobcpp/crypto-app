@@ -33,16 +33,16 @@
     <thead>
       <th>Name</th>
       <th>Symbol</th>
-      <th>Price <div class="btn-group">
+      <th> <div class="btn-group">
 
 
 
 <div class="dropdown">
         <Button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
+{{#if currentRate}} {{currentRate}} {{else}} GBP {{/if}}
     </Button>
 
-    <div class="dropdown-menu">
+    <div class="dropdown-menu scrollable-menu">
       {{#rates}}
       <option id="optionText" value="{{this.name}}" class="dropdown-item">{{name}}</option>
       {{/rates}}
@@ -55,7 +55,7 @@
     </thead>
     <tbody>
       {{#currencies}}
-        <tr>
+        <tr class="data-row">
           <td>{{name}}</td>
           <td>{{symbol}}</td>
           <td>{{formatPrice price_usd ../currentRate}}</td>
