@@ -11,9 +11,6 @@
     <link href="style.css" type="text/css" rel="stylesheet"></link>
     <link href="bootstrap.css" type="text/css" rel="stylesheet"></link>
 
-
-
-
 </head>
 <body>
 
@@ -36,16 +33,23 @@
     <thead>
       <th>Name</th>
       <th>Symbol</th>
-      <th>Price <div class="btn-group"> <Button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      (£)
+      <th>Price <div class="btn-group">
+
+
+
+<div class="dropdown">
+        <Button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
     </Button>
+
     <div class="dropdown-menu">
       {{#rates}}
-
-      <a class="dropdown-item" href="#">{{name}}</a>
-<!--       <a class="dropdown-item" href="#">{{EUR}}</a> -->
+      <option id="optionText" value="{{this.name}}" class="dropdown-item">{{name}}</option>
       {{/rates}}
     </div>
+</div>
+
+
   </div>
   </th>
     </thead>
@@ -54,7 +58,7 @@
         <tr>
           <td>{{name}}</td>
           <td>{{symbol}}</td>
-          <td>{{formatPrice price_usd ../rates}}</td>
+          <td>{{formatPrice price_usd ../currentRate}}</td>
         </tr>
       {{/currencies}}
     </tbody>
@@ -65,3 +69,4 @@
 <script src="app.js"></script>
 </body>
 </html>
+
