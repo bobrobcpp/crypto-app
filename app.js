@@ -4,7 +4,9 @@
   let template = Handlebars.compile(source);
   let rates = [];
   let currentRate;
-
+  $(document).on('click', 'footer', function() {
+    $('footer').hide();
+  });
   //Load todays currency exchange rates and push to rates array
   $.getJSON('https://api.fixer.io/latest?base=USD', function(rateData) {
     console.log(rateData);
@@ -39,8 +41,9 @@
           return (USDPrice * currObj.rate).toFixed(2);
         } else {
           //Onload return price in GBP
-          GBPPrice = USDPrice * rates[0].rate;
-          return GBPPrice.toFixed(2);
+          // GBPPrice = USDPrice * rates[0].rate;
+          // return GBPPrice.toFixed(2);
+          return USDPrice;
         }
       });
     });
